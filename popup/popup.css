@@ -1,0 +1,152 @@
+:root {
+  color-scheme: light dark;
+  font-family: "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top right, rgba(16, 163, 127, 0.18), transparent 42%),
+    linear-gradient(180deg, #f8fafc, #eef2ff);
+  color: #0f172a;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background:
+      radial-gradient(circle at top right, rgba(16, 163, 127, 0.24), transparent 42%),
+      linear-gradient(180deg, #0f172a, #111827);
+    color: #f8fafc;
+  }
+}
+
+.popup {
+  width: 320px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.hero h1 {
+  margin: 4px 0 6px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #10a37f;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.muted {
+  margin: 0;
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+@media (prefers-color-scheme: dark) {
+  .muted {
+    color: #cbd5e1;
+  }
+}
+
+.stats,
+.actions,
+.settings {
+  margin-top: 14px;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.stat-card {
+  padding: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(10px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .stat-card {
+    background: rgba(15, 23, 42, 0.58);
+  }
+}
+
+.stat-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 11px 12px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.75);
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+  button {
+    background: rgba(15, 23, 42, 0.7);
+  }
+}
+
+.hint {
+  margin: 0;
+  padding: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.62);
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.toggle {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.toggle input {
+  margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hint {
+    background: rgba(15, 23, 42, 0.58);
+    color: #cbd5e1;
+  }
+
+  .toggle {
+    background: rgba(15, 23, 42, 0.58);
+  }
+}
+
+.status {
+  min-height: 20px;
+  margin: 14px 2px 2px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.4;
+}
