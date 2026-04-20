@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ChatGPT Compass</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="hero">
+        <p class="eyebrow">ChatGPT Compass</p>
+        <h1>Export and navigate faster</h1>
+        <p class="muted">Lightweight Edge / Chrome extension for ChatGPT conversations.</p>
+      </header>
+
+      <section class="stats">
+        <div class="stat-card">
+          <span class="stat-label">Title</span>
+          <strong id="conversation-title">Waiting for page...</strong>
+        </div>
+        <div class="stat-row">
+          <div class="stat-card">
+            <span class="stat-label">Rounds</span>
+            <strong id="round-count">-</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Messages</span>
+            <strong id="message-count">-</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="actions">
+        <p class="hint">This build keeps the ChatGPT page clean and only adds the round navigator.</p>
+      </section>
+
+      <section class="settings">
+        <label class="toggle">
+          <input id="enable-round-navigator" type="checkbox" />
+          <span>Enable round navigator</span>
+        </label>
+      </section>
+
+      <p id="status" class="status">Open a ChatGPT conversation tab to use the extension.</p>
+    </main>
+    <script type="module" src="./popup.js"></script>
+  </body>
+</html>
