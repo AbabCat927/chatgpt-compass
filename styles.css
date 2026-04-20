@@ -1,0 +1,199 @@
+#chatgpt-compass-nav {
+  position: fixed;
+  top: 50%;
+  right: 14px;
+  z-index: 2147483640;
+  transform: translateY(-50%);
+  width: 26px;
+  pointer-events: none;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.chatgpt-compass-info {
+  position: absolute;
+  top: 0;
+  right: calc(100% + 14px);
+  width: 236px;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0f172a;
+  font-size: 12px;
+  line-height: 1.45;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-2px);
+  transition: opacity 140ms ease;
+}
+
+#chatgpt-compass-nav.is-hovering .chatgpt-compass-info {
+  opacity: 1;
+}
+
+.dark .chatgpt-compass-info,
+html.dark .chatgpt-compass-info {
+  background: rgba(15, 23, 42, 0.86);
+  border-color: rgba(148, 163, 184, 0.18);
+  color: #f8fafc;
+}
+
+.chatgpt-compass-rail {
+  position: relative;
+  width: 26px;
+  height: clamp(360px, 72vh, 760px);
+  pointer-events: none;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+.dark .chatgpt-compass-rail,
+html.dark .chatgpt-compass-rail {
+  background: rgba(15, 23, 42, 0.82);
+  border-color: rgba(148, 163, 184, 0.18);
+  box-shadow: 0 12px 34px rgba(2, 6, 23, 0.35);
+}
+
+.chatgpt-compass-track {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(148, 163, 184, 0.12), rgba(100, 116, 139, 0.44), rgba(148, 163, 184, 0.12));
+}
+
+.chatgpt-compass-dot-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.chatgpt-compass-dot {
+  position: absolute;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border: 0;
+  border-radius: 999px;
+  background: #64748b;
+  cursor: pointer;
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.94);
+  transition: background 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+}
+
+.dark .chatgpt-compass-dot,
+html.dark .chatgpt-compass-dot {
+  box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.96);
+}
+
+.chatgpt-compass-dot.is-active {
+  background: #0f172a;
+  box-shadow: 0 0 0 4px rgba(148, 163, 184, 0.26);
+}
+
+.dark .chatgpt-compass-dot.is-active,
+html.dark .chatgpt-compass-dot.is-active {
+  background: #e2e8f0;
+  box-shadow: 0 0 0 4px rgba(148, 163, 184, 0.18);
+}
+
+.chatgpt-compass-dot:hover {
+  background: #334155;
+  box-shadow: 0 0 0 4px rgba(148, 163, 184, 0.18);
+}
+
+.chatgpt-compass-dot.is-marked {
+  background: #f59e0b;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.22);
+}
+
+.chatgpt-compass-dot.is-marked.is-active {
+  background: #d97706;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.24);
+}
+
+.katex,
+.katex-display,
+mjx-container,
+math {
+  cursor: pointer;
+  transition: background-color 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+}
+
+.katex:not(.katex-display):hover,
+math:not([display="block"]):hover {
+  border-radius: 8px;
+  background: rgba(148, 163, 184, 0.14);
+  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.18);
+}
+
+.katex-display:hover,
+mjx-container[display="true"]:hover,
+math[display="block"]:hover {
+  border-radius: 14px;
+  background: rgba(148, 163, 184, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.18);
+}
+
+.dark .katex:not(.katex-display):hover,
+html.dark math:not([display="block"]):hover,
+html.dark .katex:not(.katex-display):hover {
+  background: rgba(148, 163, 184, 0.12);
+  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.14);
+}
+
+.dark .katex-display:hover,
+.dark mjx-container[display="true"]:hover,
+.dark math[display="block"]:hover,
+html.dark .katex-display:hover,
+html.dark mjx-container[display="true"]:hover,
+html.dark math[display="block"]:hover {
+  background: rgba(148, 163, 184, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.14);
+}
+
+.chatgpt-compass-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  z-index: 2147483647;
+  transform: translateX(-50%) translateY(12px);
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.92);
+  color: #f8fafc;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.chatgpt-compass-toast.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 1024px) {
+  #chatgpt-compass-nav {
+    right: 10px;
+  }
+
+  .chatgpt-compass-info {
+    display: none;
+  }
+
+  .chatgpt-compass-rail {
+    height: clamp(320px, 60vh, 620px);
+  }
+}
